@@ -1,13 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/', methods=['GET'])
 def index():
+    return render_template('index.html')
 
-    a=10
-    b=6
-    c=0
-    # result=(a+b)/c
-    return '<h1>Happy</h1>'
-
-app.run(debug=True)
